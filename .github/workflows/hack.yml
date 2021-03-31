@@ -2,7 +2,7 @@ name: Hacking the streak
 
 on:
   schedule:
-    - cron : "11 16 * * *"
+    - cron : "17 17 * * *"
   workflow_dispatch:
 jobs:
   update_and_push:
