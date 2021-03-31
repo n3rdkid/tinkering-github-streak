@@ -1,25 +1,14 @@
 name: Hacking the streak
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   schedule:
-    - cron : "22 22 * * *"
-
-  # Allows you to run this workflow manually from the Actions tab
+    - cron : "* * * * *"
   workflow_dispatch:
 jobs:
   update_and_push:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       - name: Get date
         run: |
           date > ./data.md
